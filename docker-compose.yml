@@ -1,0 +1,29 @@
+version: '2'
+services:
+services:
+  redis:
+    image: redis:3.0.5
+    command: redis-server
+    ports:
+      - '6371:6379'
+    volumes:
+      - redis-data:/var/lib/redis/data
+  web:
+    build: . # look in the current directory for a Dockerfile
+    restart: always
+    tty: true
+    stdin_open: true
+    volumes:
+      - .:/cvm
+    ports:
+      - "5000:3000"
+      - "9983:8983"
+      - "9991:9999"
+    command: ./docker-start-app.sh
+    # env_file:
+      # - .web.env
+    depends_on:
+      - redis
+volumes:
+  redis-data:
+    driver: local
