@@ -9,7 +9,7 @@ module Sanitize
   end
 
   def check_special_characters(string, messages)
-    if string.match(/[?\\&]+/)
+    if string.match(/[?\\&\/]+/)
       messages << "Term contains special characters"
     end
     messages

@@ -272,6 +272,33 @@ RSpec.describe TermsController do
           expect(response).to render_template("new")
         end
       end
+
+      context "when term has a forward slash" do
+      let(:term_id) {"bad/term"}
+      let(:save_success) { false }
+      let(:params) do
+        {
+          :term => {
+            :id => term_id
+          },
+          :vocabulary_id => "test",
+          :term_type => "Term",
+          :vocabulary => {
+            :id => "test",
+            :label => [""],
+            :language => {
+              :label => ["en"],
+            }
+          }
+        }
+      end
+      it "should show the term form again" do
+        expect(response).to render_template("new")
+      end
+    end
+  end
+
+  describe "PATCH update" do
     end
 
     describe "PATCH update" do
