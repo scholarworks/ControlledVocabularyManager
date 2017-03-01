@@ -7,7 +7,7 @@
     <%= f.input :name, required: true, hint: "Please provide your first and last name" %>
     <%= f.input :email, required: true, autofocus: true %>
 
-    <%= f.input :institution, collection: ["Bakersfield", "Channel Islands", "Chico", "Dominguez Hills", "East Bay", "Fresno", "Fullerton", "Humboldt", "Long Beach", "Los Angeles", "Maritime Academy", "Monterey Bay", "Moss Landing Marine Labratory", "Northridge", "Pomona", "Sacramento", "San Bernardino", "San Diego", "San Francisco", "San José", "San Luis Obispo", "San Marcos", "Sonoma", "Stanislaus"], as: :radio_buttons, required: true %>
+    <%= f.input :institution, collection: ["Bakersfield", "Chancellors Office", "Channel Islands", "Chico", "Dominguez Hills", "East Bay", "Fresno", "Fullerton", "Humboldt", "Long Beach", "Los Angeles", "Maritime Academy", "Monterey Bay", "Moss Landing Marine Labratory", "Northridge", "Pomona", "Sacramento", "San Bernardino", "San Diego", "San Francisco", "San José", "San Luis Obispo", "San Marcos", "Sonoma", "Stanislaus"], as: :radio_buttons, required: true %>
 
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true %>
