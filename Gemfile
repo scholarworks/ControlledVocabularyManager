@@ -34,7 +34,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # Use unicorn as the app server
-gem 'unicorn'
+# gem 'unicorn'
+gem 'puma', '~> 3.0'
 
 # Use for getting the ISO639 language sets easily
 gem 'iso-639'
@@ -52,7 +53,7 @@ gem 'rugged'
 gem 'config'
 gem 'simple_form'
 gem 'coveralls'
-gem 'passenger'
+# gem 'passenger'
 
 gem 'devise'
 gem 'cancan'
